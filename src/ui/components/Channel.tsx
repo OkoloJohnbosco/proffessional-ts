@@ -6,12 +6,8 @@ import ChannelHeader from './Channel/Header';
 import ChannelMessage from './Channel/Message';
 import Loading from './Loading';
 
-
-const Channel = ({
-  channel,
-}) => {
-
-  const [messages, setMessages] = React.useState();
+const Channel: React.FC<any> = ({ channel }) => {
+  const [messages, setMessages] = React.useState<any[]>();
   useAsyncDataEffect(
     () => getChannelMessages(channel.teamId, channel.id),
     {
